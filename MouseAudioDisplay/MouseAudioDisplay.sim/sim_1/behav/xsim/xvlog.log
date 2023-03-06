@@ -1,0 +1,4 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/mnakhil/Desktop/EE2026/Project/MouseAudioDisplay/MouseAudioDisplay.srcs/sources_1/new/Top_Student.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Top_Student
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/mnakhil/Desktop/EE2026/Project/MouseAudioDisplay/MouseAudioDisplay.srcs/sim_1/new/my_simulation.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module my_simulation

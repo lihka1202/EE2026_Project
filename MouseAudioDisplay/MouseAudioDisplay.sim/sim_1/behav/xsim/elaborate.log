@@ -1,0 +1,8 @@
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: /opt/Xilinx/Vivado/2018.2/bin/unwrapped/lnx64.o/xelab -wto fad9f2eea5774d6091130b4bf65ba538 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot my_simulation_behav xil_defaultlib.my_simulation xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+ERROR: [VRFC 10-529] concurrent assignment to a non-net led is not permitted [/home/mnakhil/Desktop/EE2026/Project/MouseAudioDisplay/MouseAudioDisplay.srcs/sim_1/new/my_simulation.v:28]
+ERROR: [VRFC 10-2839] mixed concurrent and procedural assignment on led [/home/mnakhil/Desktop/EE2026/Project/MouseAudioDisplay/MouseAudioDisplay.srcs/sim_1/new/my_simulation.v:26]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
