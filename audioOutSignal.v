@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 27.02.2023 11:25:49
+// Create Date: 11.03.2023 00:25:04
 // Design Name: 
-// Module Name: clock_universal
+// Module Name: audioOutSignal
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,17 +20,13 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module clock_universal(
-    input CLOCK,
-    input wire [31:0] m,
-    output reg SLOW_CLOCK = 0
+module audioOutSignal(
+    input CLOCK, audioOn,
+    input [31:0] m,
+    output wire SLOW_CLOCK
     );
-    reg [31:0] COUNT = 0;
-    always @ (posedge CLOCK) 
-    begin
+    wire outClock;
+    clock_universal audio_190Hz(.CLOCK(CLOCK),.m(m),.SLOW_CLOCK(outClock));
+    assign SLOW_CLOCK = (audioOn)? outClock : 0;
 
-        COUNT <= (COUNT == m)? 0 : COUNT + 1;
-        SLOW_CLOCK <= (COUNT == 0)? ~SLOW_CLOCK : SLOW_CLOCK;
-
-    end
 endmodule

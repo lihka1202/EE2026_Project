@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 27.02.2023 11:25:49
+// Create Date: 06.03.2023 10:05:14
 // Design Name: 
-// Module Name: clock_universal
+// Module Name: btnStateDelay
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,17 +20,11 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module clock_universal(
-    input CLOCK,
-    input wire [31:0] m,
-    output reg SLOW_CLOCK = 0
-    );
+module btnStateDelay(input BTNC, CLOCK, input wire [31:0] m, output wire btnState);
     reg [31:0] COUNT = 0;
-    always @ (posedge CLOCK) 
-    begin
 
-        COUNT <= (COUNT == m)? 0 : COUNT + 1;
-        SLOW_CLOCK <= (COUNT == 0)? ~SLOW_CLOCK : SLOW_CLOCK;
 
-    end
+    dFlipFlop d_ff (.CLK(CLOCK),.d(BTNC),.q(btnState));
+
+    
 endmodule

@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 27.02.2023 11:25:49
+// Create Date: 10.03.2023 23:51:59
 // Design Name: 
-// Module Name: clock_universal
+// Module Name: dFlipFlop
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,17 +20,9 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module clock_universal(
-    input CLOCK,
-    input wire [31:0] m,
-    output reg SLOW_CLOCK = 0
-    );
-    reg [31:0] COUNT = 0;
-    always @ (posedge CLOCK) 
+module dFlipFlop(input d, CLOCK, output reg q = 0);
+    always @ (posedge CLOCK)
     begin
-
-        COUNT <= (COUNT == m)? 0 : COUNT + 1;
-        SLOW_CLOCK <= (COUNT == 0)? ~SLOW_CLOCK : SLOW_CLOCK;
-
+        q <= d;
     end
 endmodule
