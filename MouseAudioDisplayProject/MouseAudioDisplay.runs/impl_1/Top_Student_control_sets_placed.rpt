@@ -1,0 +1,74 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+----------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
+| Date         : Thu Mar 16 13:28:15 2023
+| Host         : LAPTOP-MBJHTN7L running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file Top_Student_control_sets_placed.rpt
+| Design       : Top_Student
+| Device       : xc7a35t
+----------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Number of unique control sets                            |     9 |
+| Unused register locations in slices containing registers |    18 |
++----------------------------------------------------------+-------+
+
+
+2. Histogram
+------------
+
++--------+--------------+
+| Fanout | Control Sets |
++--------+--------------+
+|      4 |            3 |
+|    16+ |            6 |
++--------+--------------+
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              12 |            5 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |             250 |           36 |
+| Yes          | No                    | No                     |             104 |           15 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |               0 |            0 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++---------------------------+----------------------------------------+----------------------------------------+------------------+----------------+
+|        Clock Signal       |              Enable Signal             |            Set/Reset Signal            | Slice Load Count | Bel Load Count |
++---------------------------+----------------------------------------+----------------------------------------+------------------+----------------+
+|  clk_unit_pixelInd/clk25m |                                        |                                        |                1 |              4 |
+| ~clk6p25m_BUFG            |                                        |                                        |                2 |              4 |
+|  CLOCK_IBUF_BUFG          |                                        |                                        |                2 |              4 |
+| ~clk6p25m_BUFG            |                                        | oled_unit/frame_counter[16]_i_1_n_0    |                4 |             32 |
+| ~clk6p25m_BUFG            | oled_unit/delay[0]_i_1_n_0             |                                        |                5 |             40 |
+| ~clk6p25m_BUFG            | oled_unit/FSM_onehot_state[31]_i_1_n_0 |                                        |               10 |             64 |
+|  CLOCK_IBUF_BUFG          |                                        | clk_unit_oled/clear                    |                8 |             64 |
+|  CLOCK_IBUF_BUFG          |                                        | clk_unit_pixelInd/count0[0]_i_1__0_n_0 |                8 |             64 |
+| ~clk6p25m_BUFG            |                                        | oled_unit/spi_word[39]_i_1_n_0         |               16 |             90 |
++---------------------------+----------------------------------------+----------------------------------------+------------------+----------------+
+
+
